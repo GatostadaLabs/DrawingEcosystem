@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888750fb19a90d349a423c0434554fde, type: 3}
+  m_Name: DT_Nematode
+  m_EditorClassIdentifier: Assembly-CSharp::Caronte.DrawingEcosystem.DrawingTypeDefinition
+  type: 3
+  displayName: Nematodo
+  prefab: {fileID: 2694485855356407083, guid: c9629b9cacf0a7b40b9d4193540d177d, type: 3}
+  optionalMask: {fileID: 2800000, guid: 919fed5929224ecfba7a297be7dcf6f4, type: 3}
+  cropRegion:
+    x: 100
+    y: 220
+    width: 990
+    height: 1280
+  textureProperty: _BaseMap
+  spawnCenter: {x: 0, y: -1, z: 0}
+  spawnArea: {x: 8, y: 1}
+  uniformScale: 0.6
+  randomYaw: 0
