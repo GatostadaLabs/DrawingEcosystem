@@ -1277,6 +1277,7 @@ GameObject:
   - component: {fileID: 418859215}
   - component: {fileID: 418859214}
   - component: {fileID: 418859213}
+  - component: {fileID: 418859216}
   m_Layer: 0
   m_Name: DrawingEcosystem_Managers
   m_TagString: Untagged
@@ -1411,6 +1412,8 @@ MonoBehaviour:
   targetCamera: {fileID: 2038744267}
   backgroundRenderer: {fileID: 103884583}
   backgroundOffset: 0.15
+  minimumSpawnSeparation: 0.2
+  maxSpawnPositionAttempts: 40
   applyTextureToChildren: 1
 --- !u!114 &418859208
 MonoBehaviour:
@@ -1481,7 +1484,7 @@ MonoBehaviour:
   previewRawImage: {fileID: 0}
   previewTextureProperty: _BaseMap
   colorTemperatureMode: 1
-  manualColorTemperature: 0.3
+  manualColorTemperature: 0.1
   automaticTemperatureBias: 0
   automaticCorrectionStrength: 0.8
   automaticNeutralSaturation: 0.3
@@ -1514,6 +1517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Caronte.DrawingEcosystem.ArduinoCaptureController
   gameController: {fileID: 418859204}
+  forceSpecificPort: 1
+  forcedPortName: COM3
   deviceNameContains: Arduino
   baudRate: 9600
   captureDelaySeconds: 2
@@ -1754,6 +1759,24 @@ MonoBehaviour:
   backgroundVolume: 0.55
   backgroundAudioFadeDuration: 1.25
   backgroundAudioSource: {fileID: 418859213}
+--- !u!114 &418859216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418859202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5627cb33946b604fa7fe1f2d2f487f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Caronte.DrawingEcosystem.DrawingTypeScaleManager
+  spawnManager: {fileID: 418859207}
+  initializedFromDefinitions: 1
+  mycorrhizaScale: 0.66
+  fungusScale: 0.4
+  bacteriaScale: 0.45
+  nematodeScale: 0.44
 --- !u!1 &461523325
 GameObject:
   m_ObjectHideFlags: 0

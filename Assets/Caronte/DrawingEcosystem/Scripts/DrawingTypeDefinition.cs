@@ -43,5 +43,10 @@ namespace Caronte.DrawingEcosystem
         {
             return Vector3.one * Mathf.Max(0.01f, uniformScale);
         }
+
+        public void SetUniformScale(float value)
+        {
+            uniformScale = Mathf.Max(0.01f, value);
+        }
     }
 }

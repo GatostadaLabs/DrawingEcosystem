@@ -14,6 +14,9 @@ namespace Caronte.DrawingEcosystem
         private const string StartLightsSignal = "START_LIGHTS\n";
 
         [SerializeField] private DrawingGameController gameController;
+        [Header("Puerto serie")]
+        [SerializeField] private bool forceSpecificPort = true;
+        [SerializeField] private string forcedPortName = "COM3";
         [SerializeField] private string deviceNameContains = "Arduino";
         [SerializeField] private int baudRate = 9600;
         [SerializeField] private float captureDelaySeconds = 2f;
@@ -129,7 +132,16 @@ namespace Caronte.DrawingEcosystem
                 return;
             }
 
-            connectedPortName = FindPortByDeviceName(deviceNameContains);
+            if (forceSpecificPort && !string.IsNullOrWhiteSpace(forcedPortName))
+            {
+                connectedPortName = forcedPortName.Trim();
+            }
+            else
+            {
+                // Comportamiento anterior: buscar el puerto cuyo nombre contenga "Arduino".
+                connectedPortName = FindPortByDeviceName(deviceNameContains);
+            }
+
             if (string.IsNullOrEmpty(connectedPortName))
             {
                 Debug.LogError($"No se encontró ningún puerto serie cuyo nombre contenga '{deviceNameContains}'.", this);
